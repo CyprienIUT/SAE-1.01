@@ -1,0 +1,80 @@
+ex 1 :
+
+Cas d'erreur :
+
+Identifiant vide                mdp vide
+Identifiant vide                mdp non vide
+
+Identifiant vide                mdp correct
+Identifiant non vide            mdp vide
+Identifiant inapproprié         mdp quelconque
+Identifiant correct             mdp non valide
+Identifiant inexistant          mdp quelconque
+Identifiant quelconque          mdp mal formé
+Identifiant trop long           mdp quelconque
+Identifiant trop court          mdp quelconque
+
+Cas "normal" :
+
+Identifiant correct     mdp correct
+
+ex 2 :
+
+Identification du test : validité de la 1ère valeur
+Contexte d'exécution : début d'exécution
+Étapes du test à effectuer : taper une valeur au clavier
+
+Numéro du cas       Données         Résultats attendu       
+Cas 1               5               continu
+Cas 2               a               Redemande de saisir
+Cas 3               ekdej           Redemande de saisir
+Cas 4               7.0             continu
+Cas 5               -15             continu
+Cas 6               8.45            continu
+
+
+
+Identification du test : validité de la 2e valeur
+Contexte d'exécution : début d'exécution
+Étapes du test à effectuer : taper une valeur au clavier
+
+Numéro du cas       Données         Résultats attendu           Resultat obtenu      
+Cas 1               5               ok, continu
+Cas 2               a               Redemande de saisir
+Cas 3               bonjour           Redemande de saisir
+Cas 4               7.0             Redemande de saisir
+Cas 5               -15             ok, continu
+Cas 6               8.45            Redemande de saisir
+Cas 7               3000000000      Redemande de saisir
+Cas 8               0               ok, continu
+Cas 9               4.0             = 4 et ok, continu
+
+
+Identification du test : calcul du max
+Contexte d'exécution : deux valeurs valides ont été saisies
+Étapes du test à effectuer : saisir 2 entiers au clavier
+
+Numéro du cas       Données         Résultats attendu       
+Cas 1               4 et 8          max = 8
+Cas 2               4 et 4          max = 4
+Cas 3               -4 et 0         max = 5
+Cas 4               -78 et -17      max = -17
+Cas 5               8 et 4          max = 8
+
+
+ex 3 :
+Exemple moyenne DS 
+
+        Résultat obtenu     Résultat du test
+
+Cas 1   10.94               échec
+Cas 2   15.00               réussi
+Cas 3   7.50                réussi
+Cas 4   10.50               réussi
+Cas 5   6.10                réussi
+Cas 6   12.70               réussi
+Cas 7   16.60               échec
+Cas 8   3.47                échec
+
+ex 4 :
+

@@ -1,0 +1,32 @@
+le programme Sudoku c'est
+constante entier SAISIR := 1;
+
+début
+    type grilleJouer = tableau[9][9] de entier;
+    type grilleDepart = tableau[9][9] de entier;
+    numLigne : entier;
+    numColonne : entier;
+    chiffreSaisir : entier;
+    actionChoisie : entier;
+    choix[5] : chaîne;
+
+        
+    newGrille(entF grilleJouer, entF grilleDe0);
+    affichageGrille(entF grilleJouer);
+    actionChoisie = action();
+    numLigne := saisieLigne();
+    numColonne := saisieColonne();
+
+    
+    si (actionChoisie == SAISIR) alors
+        // verifier position
+        chiffreSaisir := saisieCase();
+        ajoutCase(entF grilleJouer, entF numLigne, entF numColonne, entF chiffreSaisir);
+    sinon
+        // verifier position
+        supprimerCase(grilleJouer, entF numLigne, entF numColonne);
+    finsi
+
+
+
+fin

@@ -1,0 +1,4 @@
+#! /bin/bash
+
+gcc -o Sudoku -Wall -Werror -lm $1.c && ./Sudoku #< $1_test_vals.txt  > test.txt
+rm Sudoku

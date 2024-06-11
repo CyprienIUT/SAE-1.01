@@ -1,0 +1,300 @@
+\hypertarget{Sudoku_8c}{}\doxysection{Référence du fichier Sudoku.\+c}
+\label{Sudoku_8c}\index{Sudoku.c@{Sudoku.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{Sudoku_8c_aaf0f2c3f21441669feeb6eaf1a52e3b6}{BARRE}}~\textquotesingle{}$\vert$\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em constante pour afficher les barres de la grille \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{Sudoku_8c_a0240ac851181b84ac374872dc5434ee4}{N}}~3
+\begin{DoxyCompactList}\small\item\em constante définissant les dimensions des blocs et de la grille \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{Sudoku_8c_abfa179ca04bf5c427a56beb8b26c0272}{NB\+\_\+\+COLONNES}}~9
+\begin{DoxyCompactList}\small\item\em constante utiliser pour définir le nombre de colonnes de la grille \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{Sudoku_8c_ad8edf09d2d914fdd5eae545ee2bd6ce9}{NB\+\_\+\+LIGNES}}~9
+\begin{DoxyCompactList}\small\item\em constante utiliser pour définir le nombre de ligne de la grille \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{Sudoku_8c_a0ea7ff5947c5f5430a29fdd98391eb2a}{PLUS}}~\textquotesingle{}+\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em constante pour afficher les \textquotesingle{}+\textquotesingle{} de la grille \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{Sudoku_8c_a43011aabc923f9b33f1f51dc03b23539}{POINT}}~\textquotesingle{}.\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em constante pour afficher les points de la grille et utilisé dans la vérification de la présence d\textquotesingle{}un point lors de la saisie \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{Sudoku_8c_a25941a68cf1dd1d2aa93a31e85714601}{TIRET}}~\textquotesingle{}-\/\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em constante pour afficher les tirets de la grille \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{Sudoku_8c_ac207b6eba0ba8876d0c7e1c65028cc3b}{UN}}~1
+\begin{DoxyCompactList}\small\item\em constante utiliser dans plusieurs procédures / fonctions \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{Sudoku_8c_ac328e551bde3d39b6d7b8cc9e048d941}{ZERO}}~0
+\begin{DoxyCompactList}\small\item\em constante utiliser dans plusieurs procédures / fonctions \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Définitions de type}
+\begin{DoxyCompactItemize}
+\item 
+typedef int \mbox{\hyperlink{Sudoku_8c_a8f3bbcf92ab0ce19c42eaf60c7b8c287}{Tgrille}}\mbox{[}\mbox{\hyperlink{Sudoku_8c_ad8edf09d2d914fdd5eae545ee2bd6ce9}{NB\+\_\+\+LIGNES}}\mbox{]}\mbox{[}\mbox{\hyperlink{Sudoku_8c_abfa179ca04bf5c427a56beb8b26c0272}{NB\+\_\+\+COLONNES}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em type tableau de taille NB\+\_\+\+LIGNES $\ast$ NB\+\_\+\+COLONNES \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{Sudoku_8c_ac90e8c36a8f388e03dc57f6dffdf5830}{affiche\+Ligne\+Separateur}} ()
+\begin{DoxyCompactList}\small\item\em Procédure qui permet d\textquotesingle{}afficher les lignes de séparations horizontales de la grille affichée. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{Sudoku_8c_a4178e7fcff12aa6fed40c49cc3ef364a}{afficher\+Grille}} (\mbox{\hyperlink{Sudoku_8c_a8f3bbcf92ab0ce19c42eaf60c7b8c287}{Tgrille}})
+\begin{DoxyCompactList}\small\item\em Procédure qui permet d\textquotesingle{}afficher la grille. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{Sudoku_8c_acb53e8ba3768585e246754dd3a660246}{charger\+Grille}} (\mbox{\hyperlink{Sudoku_8c_a8f3bbcf92ab0ce19c42eaf60c7b8c287}{Tgrille}}, bool $\ast$)
+\item 
+bool \mbox{\hyperlink{Sudoku_8c_ae7218897e2eda3ec2c0faebf2781a0c0}{grille\+Pleine}} (\mbox{\hyperlink{Sudoku_8c_a8f3bbcf92ab0ce19c42eaf60c7b8c287}{Tgrille}})
+\begin{DoxyCompactList}\small\item\em Fonction qui indique si la grille passée en paramètre est pleine ou non (remplis de valeurs compris entre 1 et 9) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{Sudoku_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Programme principal. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{Sudoku_8c_a4bdfe0b6fee70cbbd9913302998a8c96}{nom\+Fichier\+Valide}} (char\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Fonction qui vérifie la validité du nom du fichier. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{Sudoku_8c_a41734b62424ba5d464beec0918485817}{point\+Present}} (char\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Fonction qui vérifie la présence d\textquotesingle{}un point dans la chaine de caractères de la procédure saisir. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{Sudoku_8c_a88a53078ad5fa1b9b2640ab3bab8e47c}{possible}} (\mbox{\hyperlink{Sudoku_8c_a8f3bbcf92ab0ce19c42eaf60c7b8c287}{Tgrille}}, int, int, int)
+\begin{DoxyCompactList}\small\item\em Fonction qui indique s\textquotesingle{}il est possible de placer le numéro à insérer dans la grille au coordonnées en paramètre. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{Sudoku_8c_a4ddef467d70df44dc4af777a9e9f1737}{saisir}} (int $\ast$)
+\begin{DoxyCompactList}\small\item\em Procédure qui permet d\textquotesingle{}insérer soit un numéro de ligne, soit une colonne, soit le chiffre à placer dans la grille. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentation des macros}
+\mbox{\Hypertarget{Sudoku_8c_aaf0f2c3f21441669feeb6eaf1a52e3b6}\label{Sudoku_8c_aaf0f2c3f21441669feeb6eaf1a52e3b6}} 
+\index{Sudoku.c@{Sudoku.c}!BARRE@{BARRE}}
+\index{BARRE@{BARRE}!Sudoku.c@{Sudoku.c}}
+\doxysubsubsection{\texorpdfstring{BARRE}{BARRE}}
+{\footnotesize\ttfamily \#define BARRE~\textquotesingle{}$\vert$\textquotesingle{}}
+
+
+
+constante pour afficher les barres de la grille 
+
+\mbox{\Hypertarget{Sudoku_8c_a0240ac851181b84ac374872dc5434ee4}\label{Sudoku_8c_a0240ac851181b84ac374872dc5434ee4}} 
+\index{Sudoku.c@{Sudoku.c}!N@{N}}
+\index{N@{N}!Sudoku.c@{Sudoku.c}}
+\doxysubsubsection{\texorpdfstring{N}{N}}
+{\footnotesize\ttfamily \#define N~3}
+
+
+
+constante définissant les dimensions des blocs et de la grille 
+
+\mbox{\Hypertarget{Sudoku_8c_abfa179ca04bf5c427a56beb8b26c0272}\label{Sudoku_8c_abfa179ca04bf5c427a56beb8b26c0272}} 
+\index{Sudoku.c@{Sudoku.c}!NB\_COLONNES@{NB\_COLONNES}}
+\index{NB\_COLONNES@{NB\_COLONNES}!Sudoku.c@{Sudoku.c}}
+\doxysubsubsection{\texorpdfstring{NB\_COLONNES}{NB\_COLONNES}}
+{\footnotesize\ttfamily \#define NB\+\_\+\+COLONNES~9}
+
+
+
+constante utiliser pour définir le nombre de colonnes de la grille 
+
+\mbox{\Hypertarget{Sudoku_8c_ad8edf09d2d914fdd5eae545ee2bd6ce9}\label{Sudoku_8c_ad8edf09d2d914fdd5eae545ee2bd6ce9}} 
+\index{Sudoku.c@{Sudoku.c}!NB\_LIGNES@{NB\_LIGNES}}
+\index{NB\_LIGNES@{NB\_LIGNES}!Sudoku.c@{Sudoku.c}}
+\doxysubsubsection{\texorpdfstring{NB\_LIGNES}{NB\_LIGNES}}
+{\footnotesize\ttfamily \#define NB\+\_\+\+LIGNES~9}
+
+
+
+constante utiliser pour définir le nombre de ligne de la grille 
+
+\mbox{\Hypertarget{Sudoku_8c_a0ea7ff5947c5f5430a29fdd98391eb2a}\label{Sudoku_8c_a0ea7ff5947c5f5430a29fdd98391eb2a}} 
+\index{Sudoku.c@{Sudoku.c}!PLUS@{PLUS}}
+\index{PLUS@{PLUS}!Sudoku.c@{Sudoku.c}}
+\doxysubsubsection{\texorpdfstring{PLUS}{PLUS}}
+{\footnotesize\ttfamily \#define PLUS~\textquotesingle{}+\textquotesingle{}}
+
+
+
+constante pour afficher les \textquotesingle{}+\textquotesingle{} de la grille 
+
+\mbox{\Hypertarget{Sudoku_8c_a43011aabc923f9b33f1f51dc03b23539}\label{Sudoku_8c_a43011aabc923f9b33f1f51dc03b23539}} 
+\index{Sudoku.c@{Sudoku.c}!POINT@{POINT}}
+\index{POINT@{POINT}!Sudoku.c@{Sudoku.c}}
+\doxysubsubsection{\texorpdfstring{POINT}{POINT}}
+{\footnotesize\ttfamily \#define POINT~\textquotesingle{}.\textquotesingle{}}
+
+
+
+constante pour afficher les points de la grille et utilisé dans la vérification de la présence d\textquotesingle{}un point lors de la saisie 
+
+\mbox{\Hypertarget{Sudoku_8c_a25941a68cf1dd1d2aa93a31e85714601}\label{Sudoku_8c_a25941a68cf1dd1d2aa93a31e85714601}} 
+\index{Sudoku.c@{Sudoku.c}!TIRET@{TIRET}}
+\index{TIRET@{TIRET}!Sudoku.c@{Sudoku.c}}
+\doxysubsubsection{\texorpdfstring{TIRET}{TIRET}}
+{\footnotesize\ttfamily \#define TIRET~\textquotesingle{}-\/\textquotesingle{}}
+
+
+
+constante pour afficher les tirets de la grille 
+
+\mbox{\Hypertarget{Sudoku_8c_ac207b6eba0ba8876d0c7e1c65028cc3b}\label{Sudoku_8c_ac207b6eba0ba8876d0c7e1c65028cc3b}} 
+\index{Sudoku.c@{Sudoku.c}!UN@{UN}}
+\index{UN@{UN}!Sudoku.c@{Sudoku.c}}
+\doxysubsubsection{\texorpdfstring{UN}{UN}}
+{\footnotesize\ttfamily \#define UN~1}
+
+
+
+constante utiliser dans plusieurs procédures / fonctions 
+
+\mbox{\Hypertarget{Sudoku_8c_ac328e551bde3d39b6d7b8cc9e048d941}\label{Sudoku_8c_ac328e551bde3d39b6d7b8cc9e048d941}} 
+\index{Sudoku.c@{Sudoku.c}!ZERO@{ZERO}}
+\index{ZERO@{ZERO}!Sudoku.c@{Sudoku.c}}
+\doxysubsubsection{\texorpdfstring{ZERO}{ZERO}}
+{\footnotesize\ttfamily \#define ZERO~0}
+
+
+
+constante utiliser dans plusieurs procédures / fonctions 
+
+
+
+\doxysubsection{Documentation des définitions de type}
+\mbox{\Hypertarget{Sudoku_8c_a8f3bbcf92ab0ce19c42eaf60c7b8c287}\label{Sudoku_8c_a8f3bbcf92ab0ce19c42eaf60c7b8c287}} 
+\index{Sudoku.c@{Sudoku.c}!Tgrille@{Tgrille}}
+\index{Tgrille@{Tgrille}!Sudoku.c@{Sudoku.c}}
+\doxysubsubsection{\texorpdfstring{Tgrille}{Tgrille}}
+{\footnotesize\ttfamily Tgrille}
+
+
+
+type tableau de taille NB\+\_\+\+LIGNES $\ast$ NB\+\_\+\+COLONNES 
+
+Le type t\+Grille sert à stocker la grille de jeu 
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{Sudoku_8c_ac90e8c36a8f388e03dc57f6dffdf5830}\label{Sudoku_8c_ac90e8c36a8f388e03dc57f6dffdf5830}} 
+\index{Sudoku.c@{Sudoku.c}!afficheLigneSeparateur@{afficheLigneSeparateur}}
+\index{afficheLigneSeparateur@{afficheLigneSeparateur}!Sudoku.c@{Sudoku.c}}
+\doxysubsubsection{\texorpdfstring{afficheLigneSeparateur()}{afficheLigneSeparateur()}}
+{\footnotesize\ttfamily void affiche\+Ligne\+Separateur (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Procédure qui permet d\textquotesingle{}afficher les lignes de séparations horizontales de la grille affichée. 
+
+\mbox{\Hypertarget{Sudoku_8c_a4178e7fcff12aa6fed40c49cc3ef364a}\label{Sudoku_8c_a4178e7fcff12aa6fed40c49cc3ef364a}} 
+\index{Sudoku.c@{Sudoku.c}!afficherGrille@{afficherGrille}}
+\index{afficherGrille@{afficherGrille}!Sudoku.c@{Sudoku.c}}
+\doxysubsubsection{\texorpdfstring{afficherGrille()}{afficherGrille()}}
+{\footnotesize\ttfamily void afficher\+Grille (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Sudoku_8c_a8f3bbcf92ab0ce19c42eaf60c7b8c287}{Tgrille}}}]{g }\end{DoxyParamCaption})}
+
+
+
+Procédure qui permet d\textquotesingle{}afficher la grille. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em g } & paramètre d\textquotesingle{}entrée qui représente la grille à afficher \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{Sudoku_8c_acb53e8ba3768585e246754dd3a660246}\label{Sudoku_8c_acb53e8ba3768585e246754dd3a660246}} 
+\index{Sudoku.c@{Sudoku.c}!chargerGrille@{chargerGrille}}
+\index{chargerGrille@{chargerGrille}!Sudoku.c@{Sudoku.c}}
+\doxysubsubsection{\texorpdfstring{chargerGrille()}{chargerGrille()}}
+{\footnotesize\ttfamily void charger\+Grille (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Sudoku_8c_a8f3bbcf92ab0ce19c42eaf60c7b8c287}{Tgrille}}}]{g,  }\item[{bool $\ast$}]{fichier\+Valide }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Sudoku_8c_ae7218897e2eda3ec2c0faebf2781a0c0}\label{Sudoku_8c_ae7218897e2eda3ec2c0faebf2781a0c0}} 
+\index{Sudoku.c@{Sudoku.c}!grillePleine@{grillePleine}}
+\index{grillePleine@{grillePleine}!Sudoku.c@{Sudoku.c}}
+\doxysubsubsection{\texorpdfstring{grillePleine()}{grillePleine()}}
+{\footnotesize\ttfamily bool grille\+Pleine (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Sudoku_8c_a8f3bbcf92ab0ce19c42eaf60c7b8c287}{Tgrille}}}]{g }\end{DoxyParamCaption})}
+
+
+
+Fonction qui indique si la grille passée en paramètre est pleine ou non (remplis de valeurs compris entre 1 et 9) 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em g } & paramètre d\textquotesingle{}entrée qui représente la grille de jeu à vérifier \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+true si la grille est pleine, false sinon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{Sudoku_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{Sudoku_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{Sudoku.c@{Sudoku.c}!main@{main}}
+\index{main@{main}!Sudoku.c@{Sudoku.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Programme principal. 
+
+\begin{DoxyReturn}{Renvoie}
+Code de sortie du programme \+: soit failure soit succes
+\end{DoxyReturn}
+Le programme principal génère un grille de jeu et tant que la grille n\textquotesingle{}est pas pleine, il demande à l\textquotesingle{}utilisateur la saisie des coordonnées pour saisir une valeur dans la grille \mbox{\Hypertarget{Sudoku_8c_a4bdfe0b6fee70cbbd9913302998a8c96}\label{Sudoku_8c_a4bdfe0b6fee70cbbd9913302998a8c96}} 
+\index{Sudoku.c@{Sudoku.c}!nomFichierValide@{nomFichierValide}}
+\index{nomFichierValide@{nomFichierValide}!Sudoku.c@{Sudoku.c}}
+\doxysubsubsection{\texorpdfstring{nomFichierValide()}{nomFichierValide()}}
+{\footnotesize\ttfamily bool nom\+Fichier\+Valide (\begin{DoxyParamCaption}\item[{char}]{nom\+Fichier\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Fonction qui vérifie la validité du nom du fichier. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em nom\+Fichier } & paramètre d\textquotesingle{}entrée qui représente le nom du fichier vérifié \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+true si le nom du fichier est correct, false sinon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{Sudoku_8c_a41734b62424ba5d464beec0918485817}\label{Sudoku_8c_a41734b62424ba5d464beec0918485817}} 
+\index{Sudoku.c@{Sudoku.c}!pointPresent@{pointPresent}}
+\index{pointPresent@{pointPresent}!Sudoku.c@{Sudoku.c}}
+\doxysubsubsection{\texorpdfstring{pointPresent()}{pointPresent()}}
+{\footnotesize\ttfamily bool point\+Present (\begin{DoxyParamCaption}\item[{char}]{chaine\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Fonction qui vérifie la présence d\textquotesingle{}un point dans la chaine de caractères de la procédure saisir. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em chaine } & paramètre d\textquotesingle{}entrée qui représente la chaine de caractères vérifiée \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+true s\textquotesingle{}il y a un point dans la chaine de caractères, false sinon
+\end{DoxyReturn}
+La fonction permet de déterminer (dans le cas où la chaine est un nombre) s\textquotesingle{}il s\textquotesingle{}agit d\textquotesingle{}un float ou non. \mbox{\Hypertarget{Sudoku_8c_a88a53078ad5fa1b9b2640ab3bab8e47c}\label{Sudoku_8c_a88a53078ad5fa1b9b2640ab3bab8e47c}} 
+\index{Sudoku.c@{Sudoku.c}!possible@{possible}}
+\index{possible@{possible}!Sudoku.c@{Sudoku.c}}
+\doxysubsubsection{\texorpdfstring{possible()}{possible()}}
+{\footnotesize\ttfamily bool possible (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Sudoku_8c_a8f3bbcf92ab0ce19c42eaf60c7b8c287}{Tgrille}}}]{g,  }\item[{int}]{num\+Lig,  }\item[{int}]{num\+Col,  }\item[{int}]{num\+Ins }\end{DoxyParamCaption})}
+
+
+
+Fonction qui indique s\textquotesingle{}il est possible de placer le numéro à insérer dans la grille au coordonnées en paramètre. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em g } & paramètre d\textquotesingle{}entrée qui représente la grille de jeu à modifier \\
+\hline
+{\em num\+Lig } & paramètre d\textquotesingle{}entrée qui représente la ligne de la grille du nombre à placer \\
+\hline
+{\em num\+Col } & paramètre d\textquotesingle{}entrée qui représente la colonne de la grille du nombre à placer \\
+\hline
+{\em num\+Ins } & paramètre d\textquotesingle{}entrée qui représente la valeur à insérer dans la grille \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+true s\textquotesingle{}il est possible d\textquotesingle{}y placer le numéro à insérer, false sinon
+\end{DoxyReturn}
+La fonction vérifie la présence du numéro à insérer sur la ligne, colonne et bloc dans lequel il se trouve \mbox{\Hypertarget{Sudoku_8c_a4ddef467d70df44dc4af777a9e9f1737}\label{Sudoku_8c_a4ddef467d70df44dc4af777a9e9f1737}} 
+\index{Sudoku.c@{Sudoku.c}!saisir@{saisir}}
+\index{saisir@{saisir}!Sudoku.c@{Sudoku.c}}
+\doxysubsubsection{\texorpdfstring{saisir()}{saisir()}}
+{\footnotesize\ttfamily void saisir (\begin{DoxyParamCaption}\item[{int $\ast$}]{adresse\+Int }\end{DoxyParamCaption})}
+
+
+
+Procédure qui permet d\textquotesingle{}insérer soit un numéro de ligne, soit une colonne, soit le chiffre à placer dans la grille. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em adresse\+Int } & paramètre de sortie qui représente le numéro de colonne ou de ligne ou le numéro à placer \\
+\hline
+\end{DoxyParams}
